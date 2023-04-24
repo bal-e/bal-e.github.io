@@ -1,0 +1,10 @@
+title: Arav K.
+email: jcue8qere0vasrv0@bal-e.org
+description: >-
+  I like programming.
+url: "https://www.bal-e.org"
+github_username: bal-e
+
+theme: minima
+plugins:
+  - jekyll-feed
