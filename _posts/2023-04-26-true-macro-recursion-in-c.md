@@ -253,6 +253,14 @@ good idea, `cpp_va_map()` provides a great deal of useful functionality in a
 manner that is difficult to abuse, and it should be supported in some fashion or
 the other even if fully-general recursion is unwanted.
 
+Although the solution here is still fairly hacky, it's much better than the
+workarounds used by Boost.Preprocessor and metalang99; they appear to use an
+"evaluation engine" to force indirectly self-referential macros to be expanded
+by the preprocessor up to a fixed number of times (currently, [16384][ml99-rec]
+for metalang99), a solution that is far more verbose and error-prone.
+
+[ml99-rec]: https://github.com/Hirrolot/metalang99/blob/master/include/metalang99/eval/rec.h
+
 It's quite unfortunate that Clang doesn't allow for this hack; LLVM is able to
 optimize code much better than GCC in some cases, and I was hoping to use its
 optimizer combined with this feature for some more craziness.  I suppose it's
